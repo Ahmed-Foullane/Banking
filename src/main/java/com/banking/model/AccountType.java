@@ -1,9 +1,9 @@
 package com.banking.model;
 
 public enum AccountType {
-    CHECKING("Checking Account"),
-    SAVINGS("Savings Account");
-
+    CREATED("Account Created"),
+    BLOCKED("Account Bocked"),
+    ACTIVATED("Account ACTIVATED");
     private final String displayName;
 
     AccountType(String displayName) {
