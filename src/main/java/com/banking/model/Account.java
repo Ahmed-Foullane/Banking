@@ -10,7 +10,7 @@ public class Account {
     private final HashSet<Transaction> transactions;
     private String clientId;
 
-    // Constructor
+
     public Account(String accountNumber, AccountType accountType, String clientId) {
         this.accountNumber = accountNumber;
         this.accountType = accountType;
@@ -57,5 +57,4 @@ public class Account {
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
-
 }
