@@ -30,11 +30,11 @@ public class Login {
         return personRepository.findByEmail(email);
     }
 
-    public Person authenticate(String email, String password) {
+    public Boolean authenticate(String email, String password) {
         Optional<Person> person = personRepository.findByEmail(email);
         if (person.isPresent() && person.get().getPassword().equals(password)) {
-            return person.get();
+            return true;
         }
-        return null;
+        return false;
     }
 }
