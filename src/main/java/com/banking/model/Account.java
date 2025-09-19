@@ -1,17 +1,18 @@
 package com.banking.model;
 
 import java.util.HashSet;
+import java.util.UUID;
 
 
 public class Account {
-    private String accountNumber;
+    private UUID accountNumber;
     private double balance;
     private AccountType accountType;
     private final HashSet<Transaction> transactions;
-    private String clientId;
+    private UUID clientId;
 
 
-    public Account(String accountNumber, AccountType accountType, String clientId) {
+    public Account(UUID accountNumber, AccountType accountType, UUID clientId) {
         this.accountNumber = accountNumber;
         this.accountType = accountType;
         this.clientId = clientId;
@@ -22,11 +23,11 @@ public class Account {
         return transactions.size();
     }
 
-    public String getAccountNumber() {
+    public UUID getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(UUID accountNumber) {
         this.accountNumber = accountNumber;
     }
 
@@ -34,7 +35,7 @@ public class Account {
         return balance;
     }
 
-    protected void setBalance(double balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -50,11 +51,11 @@ public class Account {
         return new HashSet<>(transactions);
     }
 
-    public String getClientId() {
+    public UUID getClientId() {
         return clientId;
     }
 
-    public void setClientId(String clientId) {
+    public void setClientId(UUID clientId) {
         this.clientId = clientId;
     }
 }
