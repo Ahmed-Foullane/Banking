@@ -3,6 +3,8 @@ package com.banking.service.auth;
 import com.banking.model.Client;
 import com.banking.repository.PersonRepository;
 
+import java.util.UUID;
+
 public class Register {
 	private final PersonRepository personRepository;
 
@@ -10,7 +12,7 @@ public class Register {
 		this.personRepository = PersonRepository.getInstance();
 	}
 
-	public boolean registerClient(String clientId, String firstName, String lastName, String email, String password) {
+	public boolean registerClient(UUID clientId, String firstName, String lastName, String email, String password) {
 		if (personRepository.emailExists(email)) {
 			return false;
 		}
